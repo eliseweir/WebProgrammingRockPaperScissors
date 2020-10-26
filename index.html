@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+            <header>
+                <h1> Rock Paper Scissors </h1>
+            </header>
+    
+            <section id="instructions">
+                <p>
+                    Choose rock, paper, or scissors.<br>
+                    The first one to 3 points wins!
+                </p>
+            </section>
+    
+            <section id="nameSection">
+                <form id="nameForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <input class="button" type="submit" value="Submit">
+                </form> 
+            </section>
+
+            <section id="game">
+                <div id="options">
+                    <form name="throwForm" id="throwForm">
+                        <input type="radio" class="rps" value="0" name="item" id="radio_rock" checked>
+                        <label class="label-item" id="rock" for="radio_rock">
+                            <img src="./images/rock.png" alt=""> 
+                        </label>
+        
+                        <input type="radio" class="rps" value="1" name="item" id="radio_paper">
+                        <label class="label-item" id="paper" for="radio_paper">
+                            <img src="./images/paper.png" alt="">
+                        </label>
+        
+                        <input type="radio" class="rps" value="2" name="item" id="radio_scissors">
+                        <label class="label-item" id="scissors" for="radio_scissors">
+                            <img src="./images/scissors.png" alt=""> 
+                        </label>
+                        <br>
+                        <input class="button" id="throw" type="submit" value="Throw!">
+                    </form>
+                </div>
+
+                <div id="roundResults">
+                    <p class="results"></p>
+                    <p class="results"></p>
+                    <p class="results"></p>
+                </div>
+            </section>
+    
+            <section id="leaderBoard">
+                <div id="scores">
+                    <h1 id="score">0 - 0</h1>
+                </div>
+                <div id="players">
+                    <div>
+                        <h5 class="player" id="person">Player</h5>
+                    </div>
+                    <div>
+                        <h5 class="player" id="computer">Computer</h5>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="gameResults">
+                <h2 id="outcome"></h2>
+                <button id="reset" class="button">Play Again</button>
+            </section>
+        
+        <footer>
+            <p>
+                Images by <a href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=296855" target="_blank">Clker-Free-Vector-Images</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=296855" target="_blank">Pixabay</a>
+            </p>
+        </footer>
+
+        <script src="./javascript.js"></script>
+    </div>
+</body>
+</html>

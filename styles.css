@@ -1,0 +1,146 @@
+:root {
+    --main: #38014F;
+    --player: #99004E;
+    --comp: #2B0B80;
+    --background: lavender;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main {
+    background-color: var(--background);
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+    max-width: 60rem;
+}
+
+header {
+    color: var(--main);
+    border-bottom: 4px var(--main) solid;
+    padding: 1rem;
+}
+
+
+#instructions {
+    padding: 1rem;
+}
+
+#nameSection {
+}
+
+#name {
+    text-align: left;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--main);
+    color: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#options {
+    display: inline-flex;
+    border: 2px dotted var(--main);
+    border-radius: 10px;
+    margin: 1rem;
+    justify-content: center;
+}
+
+#options img {
+    width: 100%;
+    max-width: 75px;
+    margin: 0.5rem;
+}
+
+.rps{
+    display: none !important;
+}
+    
+label>img {
+    /*set the border of rock-paper-scissors to clear initially*/
+    border: 2px hsla(0, 0%, 100%, 0) solid;
+}
+    
+.rps:checked + label>img {
+    background-color: var(--player);
+    border: 2px var(--player) solid;
+    border-radius: 10px;
+}
+
+#roundResults {
+    background-color: var(--main);
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-block;
+    min-height: 4rem;
+    min-width: 14rem;
+}
+
+#leaderBoard {
+    margin: 0 auto;
+    width: 15rem;
+    padding: 1rem;
+}
+
+#scores {
+    background-color: white;
+    border-radius: 10px;
+    border: 3px var(--main) dotted;
+    padding: 1rem;
+}
+
+#players {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.player {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    margin-top: -1rem;
+    border-radius: 10px;
+}
+
+#person {
+    background-color: var(--player);
+}
+
+#computer {
+    background-color: var(--comp);
+}
+
+#gameResults {
+    padding: 1rem;
+}
+
+footer {
+    font-size: 0.75rem;
+}
+
+footer a {
+    color: var(--player);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
