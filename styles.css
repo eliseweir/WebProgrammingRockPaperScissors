@@ -3,6 +3,7 @@
     --player: #99004E;
     --comp: #2B0B80;
     --background: lavender;
+    --midground: rgba(56, 1, 79, 0.5);
 }
 
 * {
@@ -35,8 +36,6 @@ header {
     padding: 1rem;
 }
 
-#nameSection {
-}
 
 #name {
     text-align: left;
@@ -56,22 +55,28 @@ header {
 #game {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     flex-wrap: wrap;
 }
 
 #options {
     display: inline-flex;
+    background-color: var(--main);
     border: 2px dotted var(--main);
     border-radius: 10px;
-    margin: 1rem;
     justify-content: center;
+    height: 10rem;
 }
 
 #options img {
     width: 100%;
     max-width: 75px;
     margin: 0.5rem;
+}
+
+#shoot {
+    background-color: white;
+    color: var(--main);
 }
 
 .rps{
@@ -90,14 +95,49 @@ label>img {
 }
 
 #roundResults {
-    background-color: var(--main);
+    background-color: var(--midground);
     color: white;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0.5rem;
     display: inline-block;
-    min-height: 4rem;
     min-width: 14rem;
 }
+
+#roundResults img {
+    width: 50px;
+}
+
+#versus {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vs {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#vs-person {
+    background-color: var(--player);
+}
+
+#vs-computer {
+    background-color: var(--comp);
+}
+
+#vs-winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(56, 1, 79, 0);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
 
 #leaderBoard {
     margin: 0 auto;

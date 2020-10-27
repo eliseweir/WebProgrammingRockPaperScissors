@@ -50,6 +50,18 @@ function numberToRPS(number) {
     }
 }
 
+function numberToImage(number) {
+    if (number == 0) {
+        return "./images/rock.png";
+    } else if (number == 1) {
+        return "./images/paper.png";
+    } else if (number == 2) {
+        return "./images/scissors.png";
+    } else {
+        return "./images/clear.png";
+    }
+}
+
 function numberToWinner(number, name) {
     if (number == 0) {
         return "You tied this round.";
@@ -63,14 +75,24 @@ function numberToWinner(number, name) {
 }
 
 function displayResults(player, comp, winner) {
-    let username = document.getElementById("name").value;
-    if (username == "") {
-        username = "Player";
+    let playerImage = document.querySelector("#vs-person img");
+    playerImage.src = numberToImage(player);
+
+    let compImage = document.querySelector("#vs-computer img");
+    compImage.src = numberToImage(comp);
+
+    let winnerColor = document.querySelector("#vs-winner");
+    let winnerText = document.querySelector("#vs-winner h1");
+    if (winner == 1) {
+        winnerColor.style.backgroundColor = "#99004E";
+        winnerText.textContent = "P";
+    } else if (winner == 2) {
+        winnerColor.style.backgroundColor = "#2B0B80";
+        winnerText.textContent = "C";
+    } else {
+        winnerColor.style.backgroundColor = "rgba(56, 1, 79, 0)";
+        winnerText.textContent = "-";
     }
-    let scoreText = document.querySelectorAll(".results");
-    scoreText[0].textContent = `${username} throws ${numberToRPS(player)}.`;
-    scoreText[1].textContent = `Computer throws ${numberToRPS(comp)}.`;
-    scoreText[2].textContent = numberToWinner(winner, username);
 }
 
 function displayWinner(name) {
@@ -83,14 +105,15 @@ function displayWinner(name) {
 }
 
 function resetGame(event) {
-    // put throw button back
-    document.getElementById("throw").style.display = "initial";
+    // put shoot button back
+    document.getElementById("shoot").style.display = "initial";
 
-    // reset results box
-    let results = document.querySelectorAll(".results");
-    for (let i = 0; i < 3; i++) {
-        results[i].textContent = "";
-    }
+    // reset game display
+    document.querySelector("#vs-person img").src = "./images/clear.png";
+    document.querySelector("#vs-computer img").src = "./images/clear.png";
+
+    // reset round winner color
+    document.getElementById("vs-winner").style.backgroundColor = "rgba(56, 1, 79, 0)";
 
     // reset leaderboard
     playerScore = 0;
@@ -124,9 +147,9 @@ function compete(event) {
         displayWinner(username);
     } else if (compScore >= 3) displayWinner("Computer");
 
-    // if a player has won, disable "throw" button
+    // if a player has won, disable "shoot" button
     if (playerScore >= 3 || compScore >= 3) {
-        document.getElementById("throw").style.display = "none";
+        document.getElementById("shoot").style.display = "none";
     }
 }
 

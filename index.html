@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="./styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <div id="main">
@@ -45,15 +45,28 @@
                             <img src="./images/scissors.png" alt=""> 
                         </label>
                         <br>
-                        <input class="button" id="throw" type="submit" value="Throw!">
+                        <input class="button" id="shoot" type="submit" value="Shoot!">
                     </form>
                 </div>
 
                 <div id="roundResults">
-                    <p class="results"></p>
-                    <p class="results"></p>
-                    <p class="results"></p>
+                    <div id="versus">
+                        <div class="vs" id="vs-person">
+                            <img src="./images/clear.png" alt="">
+                        </div>
+                        <h4>vs</h4>
+                        <div class="vs" id="vs-computer">
+                            <img src="./images/clear.png" alt="">
+                        </div>
+                    </div>
+                    <div id="winner-box">
+                        <div id="vs-winner">
+                            <h1>-</h1>
+                        </div>
+                        <h4>wins this round</h4>
+                    </div>
                 </div>
+
             </section>
     
             <section id="leaderBoard">
